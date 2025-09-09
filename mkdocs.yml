@@ -8,9 +8,9 @@ nav:
      - Development: development.md
    - SedonaDB Reference:
       - Python:
-          Functions: reference/python.md
+          - Python Functions: reference/python.md
       - SQL:
-          - Functions: reference/sql.md
+          - SQL Functions: reference/sql.md
           - Spatial Joins: reference/sql-joins.md
           - Read Parquet Files: reference/read-parquet-files.md
    - Blog: "https://sedona.apache.org/latest/blog/"
