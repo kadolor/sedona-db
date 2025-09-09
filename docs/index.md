@@ -78,12 +78,6 @@ Here’s how to install SedonaDB with various build tools:
 	pip install "apache-sedona[db]"
 	```
 
-=== "Rust"
-
-	```rust
-	cargo add sedona
-	```
-
 === "R"
 
 	```bash
