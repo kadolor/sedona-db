@@ -4,7 +4,7 @@ site_url: https://sedona.apache.org/sedonadb/
 nav:
    - SedonaDB: index.md
    - SedonaDB Guides:
-     - Python Quickstart (Markdown): reference/quickstart-python.md
+     - Python Quickstart: reference/quickstart-python.md
      - Development: development.md
    - SedonaDB Reference:
       - Python:
@@ -17,6 +17,7 @@ nav:
    - Community: "https://sedona.apache.org/latest/community/"
    - Apache Software Foundation: "https://sedona.apache.org/latest/asf/asf/"
    - Sedona Homepage: "https://sedona.apache.org/latest/"
+
 repo_url: https://github.com/apache/sedona-db
 repo_name: apache/sedona-db
 theme:
@@ -50,8 +51,6 @@ extra:
     default:
        - 0.1
 
-
-
 extra_css:
   - stylesheets/extra.css
 
@@ -59,6 +58,7 @@ copyright: Copyright © 2025 The Apache Software Foundation. Apache Sedona, Sedo
 
 exclude_docs: |
      snippets/*
+     README.md
 markdown_extensions:
    - admonition
    - attr_list

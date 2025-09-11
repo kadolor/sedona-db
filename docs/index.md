@@ -3,7 +3,8 @@ hide:
   - navigation
 
 title: Introducing SedonaDB
----
+=======
+
 
 <!---
   Licensed to the Apache Software Foundation (ASF) under one
@@ -31,6 +32,10 @@ The initial `0.1` release supports a core set of vector operations, with compreh
 ## Run a query in SQL, Python, or Rust
 
 SedonaDB querying in SQL, Python, or Rust.
+
+You can easily run SedonaDB locally or in the cloud.  The first release supports a core set of vector operations, but the full-suite of common vector and raster computations will be supported soon.
+
+SedonaDB only runs on a single machine, so it’s perfect for processing smaller datasets.  You can use SedonaSpark, SedonaFlink, or SedonaSnow for operations on larger datasets.
 
 === "SQL"
 

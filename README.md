@@ -27,7 +27,7 @@ SedonaDB only runs on a single machine, so it’s perfect for processing smaller
 
 ## Install
 
-You can install Python SedonaDB with `pip install apache-sedona`.
+You can install Python SedonaDB with `pip install apache-sedona[db]`.
 
 ## Overture buildings example
 
