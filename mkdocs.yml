@@ -4,7 +4,6 @@ site_url: https://sedona.apache.org/sedonadb/
 nav:
    - SedonaDB: index.md
    - SedonaDB Guides:
-     - Python Quickstart: quickstart-python.ipynb
      - Python Quickstart (Markdown): reference/quickstart-python.md
      - Development: development.md
    - SedonaDB Reference:
