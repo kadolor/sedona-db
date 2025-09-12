@@ -19,11 +19,13 @@
 
 # Python Quickstart
 
-SedonaDB for Python can be installed from **PyPI**:
+SedonaDB for Python can be installed from PyPI:
 
 ```shell
 pip install "apache-sedona[db]"
 ```
+!!!tip "Run this tutorial as in interactive notebook"
+    You can also download the `.ipynb` version of this file from the [SedonaDB GitHub](https://github.com/apache/sedona-db/blob/main/docs/quickstart-python.ipynb)and run it as an interactive notebook.
 
 ## Import SedonaDB
 
