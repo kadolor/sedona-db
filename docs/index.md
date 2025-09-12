@@ -29,6 +29,8 @@ SedonaDB is a high-performance, dependency-free geospatial compute engine design
 
 The initial `0.1` release supports a core set of vector operations, with comprehensive vector and raster computation capabilities planned for the near future.
 
+TODO Insert video
+
 ## Run a query in SQL, Python, or Rust
 
 SedonaDB querying in SQL, Python, or Rust.
