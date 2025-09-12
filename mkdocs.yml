@@ -5,6 +5,8 @@ nav:
    - SedonaDB: index.md
    - SedonaDB Guides:
      - Python Quickstart: quickstart-python.md
+     - SedonaDB Guide: programming-guide.ipynb
+     - CLI Quickstart: quickstart-cli.md
      - Development: development.md
    - SedonaDB Reference:
       - Python:
