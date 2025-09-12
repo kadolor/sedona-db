@@ -4,7 +4,7 @@ site_url: https://sedona.apache.org/sedonadb/
 nav:
    - SedonaDB: index.md
    - SedonaDB Guides:
-     - Python Quickstart quickstart-python.md
+     - Python Quickstart: quickstart-python.md
      - Development: development.md
    - SedonaDB Reference:
       - Python:
@@ -14,7 +14,7 @@ nav:
           - Spatial Joins: reference/sql-joins.md
           - Read Parquet Files: reference/read-parquet-files.md
    - Blog: "https://sedona.apache.org/latest/blog/"
-   - Community: "https://sedona.apache.org/latest/community/"
+   - Community: "https://sedona.apache.org/latest/community/contact/"
    - Apache Software Foundation: "https://sedona.apache.org/latest/asf/asf/"
    - Sedona Homepage: "https://sedona.apache.org/latest/"
 

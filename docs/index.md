@@ -3,8 +3,7 @@ hide:
   - navigation
 
 title: Introducing SedonaDB
-=======
-
+---
 
 <!---
   Licensed to the Apache Software Foundation (ASF) under one
@@ -29,15 +28,14 @@ SedonaDB is a high-performance, dependency-free geospatial compute engine design
 
 The initial `0.1` release supports a core set of vector operations, with comprehensive vector and raster computation capabilities planned for the near future.
 
-TODO Insert video
-
 ## Run a query in SQL, Python, or Rust
 
-SedonaDB querying in SQL, Python, or Rust.
+SedonaDB offers a flexible query interface in SQL, Python, or Rust.
 
-You can easily run SedonaDB locally or in the cloud.  The first release supports a core set of vector operations, but the full-suite of common vector and raster computations will be supported soon.
+Engineered for speed, SedonaDB provides blazing-fast geospatial processing on a single machine. This makes it perfect for the rapid analysis of smaller datasets, whether you're working locally or on a cloud server. While the initial release focuses on core vector operations, a full suite of vector and raster computations is on the roadmap.
 
-SedonaDB only runs on a single machine, so it’s perfect for processing smaller datasets.  You can use SedonaSpark, SedonaFlink, or SedonaSnow for operations on larger datasets.
+For massive, distributed workloads, you can leverage the power of SedonaSpark,
+SedonaFlink, or SedonaSnow.
 
 === "SQL"
 
@@ -106,6 +104,6 @@ Here's how to install SedonaDB with various build tools:
 
 ## Have questions?
 
-Start a GitHub Discussion or join the [Discord community](https://discord.com/invite/9A3k5dEBsY) and ask the developers any questions you may have.
+Start a [GitHub Discussion ](https://github.com/apache/sedona-db/issues)or join the [Discord community](https://discord.com/invite/9A3k5dEBsY) and ask the developers any questions you may have.
 
 We look forward to collaborating with you!
