@@ -74,19 +74,7 @@ SedonaFlink, or SedonaSnow.
         sd_sql("SELECT ST_Point(0, 1) as geom")
 	```
 
-## Key features
-
-SedonaDB has several advantages:
-
-* **Blazing-Fast Performance:** Built in Rust to process massive geospatial datasets with exceptional speed.
-* **Unified Geospatial Toolkit:** Access a comprehensive suite of functions for both vector and raster data in a single, powerful library.
-* **Seamless Ecosystem Integration:** Built on Apache Arrow for smooth interoperability with popular data science libraries like GeoPandas, DuckDB, and Polars.
-* **Flexible APIs:** Effortlessly switch between Python and SQL interfaces to match your preferred workflow and skillset.
-* **Guaranteed CRS Propagation:** Automatically manages coordinate reference systems (CRS) to ensure spatial accuracy and prevent common errors.
-* **Broad File Format Support:** Work with a wide range of both modern and legacy geospatial file formats like geoparquet.
-* **Highly Extensible:** Easily customize and extend the library's functionality to meet your project's unique requirements.
-
-## Installation
+## Install SedonaDB
 
 Here's how to install SedonaDB with various build tools:
 
@@ -101,6 +89,18 @@ Here's how to install SedonaDB with various build tools:
 	```bash
 	install.packages("sedonadb", repos = "https://community.r-multiverse.org")
 	```
+
+## Key features
+
+SedonaDB has several advantages:
+
+* **Blazing-Fast Performance:** Built in Rust to process massive geospatial datasets with exceptional speed.
+* **Unified Geospatial Toolkit:** Access a comprehensive suite of functions for both vector and raster data in a single, powerful library.
+* **Seamless Ecosystem Integration:** Built on Apache Arrow for smooth interoperability with popular data science libraries like GeoPandas, DuckDB, and Polars.
+* **Flexible APIs:** Effortlessly switch between Python and SQL interfaces to match your preferred workflow and skillset.
+* **Guaranteed CRS Propagation:** Automatically manages coordinate reference systems (CRS) to ensure spatial accuracy and prevent common errors.
+* **Broad File Format Support:** Work with a wide range of both modern and legacy geospatial file formats like geoparquet.
+* **Highly Extensible:** Easily customize and extend the library's functionality to meet your project's unique requirements.
 
 ## Have questions?
 
