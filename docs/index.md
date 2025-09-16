@@ -32,7 +32,7 @@ The initial `0.1` release supports a core set of vector operations, with compreh
 
 SedonaDB offers a flexible query interface in SQL, Python, or Rust.
 
-Engineered for speed, SedonaDB provides blazing-fast geospatial processing on a single machine. This makes it perfect for the rapid analysis of smaller datasets, whether you're working locally or on a cloud server. While the initial release focuses on core vector operations, a full suite of vector and raster computations is on the roadmap.
+Engineered for speed, SedonaDB provides performant geospatial processing on a single machine. This makes it perfect for the rapid analysis of smaller datasets, whether you're working locally or on a cloud server. While the initial release focuses on core vector operations, a full suite of vector and raster computations is on the roadmap.
 
 For massive, distributed workloads, you can leverage the power of SedonaSpark,
 SedonaFlink, or SedonaSnow.
