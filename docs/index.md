@@ -28,6 +28,18 @@ SedonaDB is a high-performance, dependency-free geospatial compute engine design
 
 The initial `0.1` release supports a core set of vector operations, with comprehensive vector and raster computation capabilities planned for the near future.
 
+## Key features
+
+SedonaDB has several advantages:
+
+* **Blazing-Fast Performance:** Built in Rust to process massive geospatial datasets with exceptional speed.
+* **Unified Geospatial Toolkit:** Access a comprehensive suite of functions for both vector and raster data in a single, powerful library.
+* **Seamless Ecosystem Integration:** Built on Apache Arrow for smooth interoperability with popular data science libraries like GeoPandas, DuckDB, and Polars.
+* **Flexible APIs:** Effortlessly switch between Python and SQL interfaces to match your preferred workflow and skill set.
+* **Guaranteed CRS Propagation:** Automatically manages coordinate reference systems (CRS) to ensure spatial accuracy and prevent common errors.
+* **Broad File Format Support:** Work with a wide range of both modern and legacy geospatial file formats like geoparquet.
+* **Highly Extensible:** Easily customize and extend the library's functionality to meet your project's unique requirements.
+
 ## Run a query in SQL, Python, or Rust
 
 SedonaDB offers a flexible query interface in SQL, Python, or Rust.
@@ -90,20 +102,48 @@ Here's how to install SedonaDB with various build tools:
 	install.packages("sedonadb", repos = "https://community.r-multiverse.org")
 	```
 
-## Key features
+## Install SedonaDB CLI
 
-SedonaDB has several advantages:
+The SedonaDB command-line interface (CLI) is an interactive SQL shell for data analysis. For advanced usage, see the [DataFusion CLI docs](https://datafusion.apache.org/user-guide/cli/index.html).
 
-* **Blazing-Fast Performance:** Built in Rust to process massive geospatial datasets with exceptional speed.
-* **Unified Geospatial Toolkit:** Access a comprehensive suite of functions for both vector and raster data in a single, powerful library.
-* **Seamless Ecosystem Integration:** Built on Apache Arrow for smooth interoperability with popular data science libraries like GeoPandas, DuckDB, and Polars.
-* **Flexible APIs:** Effortlessly switch between Python and SQL interfaces to match your preferred workflow and skillset.
-* **Guaranteed CRS Propagation:** Automatically manages coordinate reference systems (CRS) to ensure spatial accuracy and prevent common errors.
-* **Broad File Format Support:** Work with a wide range of both modern and legacy geospatial file formats like geoparquet.
-* **Highly Extensible:** Easily customize and extend the library's functionality to meet your project's unique requirements.
+Install via Cargo:
+
+```shell
+cargo install sedona-cli
+```
+
+### Usage
+
+Start the interactive shell by running `sedona-cli` in your terminal. All SQL queries must end with a semicolon (`;`).
+
+```shell
+> sedona-cli
+Sedona CLI v0.0.1
+```
+
+```shell
+> SELECT ST_Point(0, 1) as geom;
+
+┌────────────┐
+│    geom    │
+│     wkb    │
+╞════════════╡
+│ POINT(0 1) │
+└────────────┘
+1 row(s)/1 column(s) fetched.
+Elapsed 0.024 seconds.
+
+```
+
+For a full list of supported SQL functions, see the [SQL Reference](https://sedona.apache.org/latest/api/sql/Overview/).
+
+### Help
+
+* **Interactive Shell:** Use `\?` inside the shell to see special commands like `\d` (list tables) or `\q` (quit).
+* **Command Line:** Use `sedona-cli --help` in your terminal to view launch options, such as setting a data path (`-p`) or executing a command (`-c`).
 
 ## Have questions?
 
-Start a [GitHub Discussion](https://github.com/apache/sedona-db/issues)or join the [Discord community](https://discord.com/invite/9A3k5dEBsY) and ask the developers any questions you may have.
+Start a [GitHub Discussion](https://github.com/apache/sedona-db/issues) or join the [Discord community](https://discord.com/invite/9A3k5dEBsY) and ask the developers any questions you may have.
 
 We look forward to collaborating with you!

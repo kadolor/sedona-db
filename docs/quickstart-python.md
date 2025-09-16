@@ -23,13 +23,16 @@ sd.sql("SELECT ST_Point(0, 1) as geom").show()
     │ POINT(0 1) │
     └────────────┘
 
+
 ## Point in polygon join
+
 
 ```python
 cities = sd.read_parquet(
     "https://raw.githubusercontent.com/geoarrow/geoarrow-data/v0.2.0/natural-earth/files/natural-earth_cities_geo.parquet"
 )
 ```
+
 
 ```python
 cities.show()
@@ -60,11 +63,14 @@ cities.show()
     │ Bir Lehlou   ┆ POINT(-9.6525222 26.1191667)  │
     └──────────────┴───────────────────────────────┘
 
+
+
 ```python
 countries = sd.read_parquet(
     "https://raw.githubusercontent.com/geoarrow/geoarrow-data/v0.2.0/natural-earth/files/natural-earth_countries_geo.parquet"
 )
 ```
+
 
 ```python
 countries.show()
@@ -95,10 +101,13 @@ countries.show()
     │ Argentina                   ┆ South America ┆ MULTIPOLYGON(((-68.63401022758323 -52.63637045887… │
     └─────────────────────────────┴───────────────┴────────────────────────────────────────────────────┘
 
+
+
 ```python
 cities.to_view("cities")
 countries.to_view("countries")
 ```
+
 
 ```python
 # join the cities and countries tables
@@ -134,9 +143,11 @@ where ST_Intersects(cities.geometry, countries.geometry)
     │ Houston       ┆ POINT(-95.348436256… ┆ United States of A… ┆ North America ┆ MULTIPOLYGON(((-12… │
     └───────────────┴──────────────────────┴─────────────────────┴───────────────┴─────────────────────┘
 
+
 ## Manually create SedonaDB DataFrames
 
 Let's create a DataFrame with one string column and one geometry column to show some of the functionality of the SedonaDB Python interface.
+
 
 ```python
 df = sd.sql("""
@@ -146,6 +157,7 @@ SELECT * FROM (VALUES
     ('three', ST_GeomFromWkt('LINESTRING(-74.0060 40.7128, -73.9352 40.7306, -73.8561 40.8484)')))
 AS t(val, point)""")
 ```
+
 
 ```python
 df.show()
