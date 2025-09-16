@@ -54,4 +54,5 @@
   color: rgba(255, 255, 255, 0.85);
   /* We no longer need vertical padding for spacing */
   padding: 0 0.9rem;
+  font-size: 0.65rem; /* NEW: Adjust font size */
 }

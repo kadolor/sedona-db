@@ -57,3 +57,16 @@ repos:
       types_or: [c, c++]
       # Don't run on vendored files
       exclude: "^c/(sedona-geoarrow-c/src/geoarrow|sedona-geoarrow-c/src/nanoarrow|sedona-tg/src/tg)/.*"
+
+  - repo: local
+    hooks:
+    - id: jupyter-nbconvert
+      name: Convert Jupyter Notebook to Markdown
+      # IMPORTANT: Change the path below to your actual notebook file
+      entry: jupyter nbconvert --to markdown --execute docs/quickstart-python.ipynb
+      language: system
+      types: [jupyter]
+      # This ensures the hook only runs when this specific notebook changes
+      files: ^docs/quickstart-python.ipynb$
+      # Always run this hook at the commit stage
+      stages: [commit]
