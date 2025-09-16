@@ -69,4 +69,4 @@ repos:
       # This ensures the hook only runs when this specific notebook changes
       files: ^docs/quickstart-python.ipynb$
       # Always run this hook at the commit stage
-      stages: [commit]
+      stages: [pre-commit]

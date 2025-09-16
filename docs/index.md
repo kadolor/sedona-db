@@ -104,6 +104,6 @@ SedonaDB has several advantages:
 
 ## Have questions?
 
-Start a [GitHub Discussion ](https://github.com/apache/sedona-db/issues)or join the [Discord community](https://discord.com/invite/9A3k5dEBsY) and ask the developers any questions you may have.
+Start a [GitHub Discussion](https://github.com/apache/sedona-db/issues)or join the [Discord community](https://discord.com/invite/9A3k5dEBsY) and ask the developers any questions you may have.
 
 We look forward to collaborating with you!
