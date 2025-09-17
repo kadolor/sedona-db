@@ -28,8 +28,8 @@ The `sd.sql()` function is designed to query tables that have already been regis
 
 The correct process is a two-step approach:
 
-1. **Load** the Parquet file into a DataFrame using `sd.read_parquet()`.
-1. **Register** the DataFrame as a temporary view using `.createOrReplaceTempView()`.
+1. **Load** the Parquet file into a data frame using `sd.read_parquet()`.
+1. **Register** the data frame view with `to_view()`.
 1. **Query** the view using `sd.sql()`.
 
 ```python linenums="1" title="Read a parquet file with SedonaDB"
@@ -42,12 +42,12 @@ df = sd.read_parquet(
     'building/building.parquet'
 )
 
-# Load the Parquet file, which creates a Pandas DataFrame
+# Load the Parquet file, which creates a Pandas data frame
 df = sd.read_parquet('s3://wherobots-benchmark-prod/SpatialBench_sf=1_format=parquet/building/building.parquet')
 
-# Convert the Pandas DataFrame to a Spark DataFrame AND
+# Convert the Pandas data frame to a Spark data frame AND
 #    register it as a temporary view in a single line.
-spark.createDataFrame(df).createOrReplaceTempView('zone')
+spark.createDataFrame(df).to_view("zone")
 
 # Now, query the view using SQL
 sd.sql("SELECT * FROM zone LIMIT 10").show()
