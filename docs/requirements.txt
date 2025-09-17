@@ -8,5 +8,4 @@ mkdocs-material
 mkdocstrings[python]
 nbconvert
 ruff
-pre-commit
 pyproj

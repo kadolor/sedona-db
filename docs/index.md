@@ -32,7 +32,7 @@ The initial `0.1` release supports a core set of vector operations, with compreh
 
 SedonaDB has several advantages:
 
-* **Blazing-Fast Performance:** Built in Rust to process massive geospatial datasets with exceptional speed.
+* **Exceptional Performance:** Built in Rust to process massive geospatial datasets with exceptional speed.
 * **Unified Geospatial Toolkit:** Access a comprehensive suite of functions for both vector and raster data in a single, powerful library.
 * **Seamless Ecosystem Integration:** Built on Apache Arrow for smooth interoperability with popular data science libraries like GeoPandas, DuckDB, and Polars.
 * **Flexible APIs:** Effortlessly switch between Python and SQL interfaces to match your preferred workflow and skill set.
@@ -101,46 +101,6 @@ Here's how to install SedonaDB with various build tools:
 	```bash
 	install.packages("sedonadb", repos = "https://community.r-multiverse.org")
 	```
-
-## Install SedonaDB CLI
-
-The SedonaDB command-line interface (CLI) is an interactive SQL shell for data analysis. For advanced usage, see the [DataFusion CLI docs](https://datafusion.apache.org/user-guide/cli/index.html).
-
-Install via Cargo:
-
-```shell
-cargo install sedona-cli
-```
-
-### Usage
-
-Start the interactive shell by running `sedona-cli` in your terminal. All SQL queries must end with a semicolon (`;`).
-
-```shell
-> sedona-cli
-Sedona CLI v0.0.1
-```
-
-```shell
-> SELECT ST_Point(0, 1) as geom;
-
-┌────────────┐
-│    geom    │
-│     wkb    │
-╞════════════╡
-│ POINT(0 1) │
-└────────────┘
-1 row(s)/1 column(s) fetched.
-Elapsed 0.024 seconds.
-
-```
-
-For a full list of supported SQL functions, see the [SQL Reference](https://sedona.apache.org/latest/api/sql/Overview/).
-
-### Help
-
-* **Interactive Shell:** Use `\?` inside the shell to see special commands like `\d` (list tables) or `\q` (quit).
-* **Command Line:** Use `sedona-cli --help` in your terminal to view launch options, such as setting a data path (`-p`) or executing a command (`-c`).
 
 ## Have questions?
 
