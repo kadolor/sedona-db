@@ -24,9 +24,13 @@ title: Introducing SedonaDB
   under the License.
 -->
 
-SedonaDB is a high-performance, dependency-free geospatial compute engine designed for single-node processing, making it ideal for smaller datasets on local machines or cloud instances.
+SedonaDB is a single-node analytical database engine with geospatial as the first-class citizen.
+
+Highly performant and dependency-free, SedonaDB is ideal for working with smaller datasets located on local machines or cloud instances.
 
 The initial `0.1` release supports a core set of vector operations, with comprehensive vector and raster computation capabilities planned for the near future.
+
+For massive, distributed workloads, you can still leverage the power of SedonaSpark, SedonaFlink, or SedonaSnow.
 
 ## Key features
 
@@ -40,14 +44,25 @@ SedonaDB has several advantages:
 * **Broad File Format Support:** Work with a wide range of both modern and legacy geospatial file formats like geoparquet.
 * **Highly Extensible:** Easily customize and extend the library's functionality to meet your project's unique requirements.
 
-## Run a query in SQL, Python, or Rust
+## Install SedonaDB
 
-SedonaDB offers a flexible query interface in SQL, Python, or Rust.
+Here's how to install SedonaDB with various build tools:
 
-Engineered for speed, SedonaDB provides performant geospatial processing on a single machine. This makes it perfect for the rapid analysis of smaller datasets, whether you're working locally or on a cloud server. While the initial release focuses on core vector operations, a full suite of vector and raster computations is on the roadmap.
+=== "pip"
 
-For massive, distributed workloads, you can leverage the power of SedonaSpark,
-SedonaFlink, or SedonaSnow.
+	```bash
+	pip install "apache-sedona[db]"
+	```
+
+=== "R"
+
+	```bash
+	install.packages("sedonadb", repos = "https://community.r-multiverse.org")
+	```
+
+## Run a query in SQL, Python, Rust, or R
+
+SedonaDB offers a flexible query interface.
 
 === "SQL"
 
@@ -58,7 +73,7 @@ SedonaFlink, or SedonaSnow.
 === "Python"
 
 	```python
-	import seonda.db
+	import sedona.db
 
 	sd = sedona.db.connect()
 	sd.sql("SELECT ST_Point(0, 1) as geom")
@@ -86,21 +101,6 @@ SedonaFlink, or SedonaSnow.
         sd_sql("SELECT ST_Point(0, 1) as geom")
 	```
 
-## Install SedonaDB
-
-Here's how to install SedonaDB with various build tools:
-
-=== "pip"
-
-	```bash
-	pip install "apache-sedona[db]"
-	```
-
-=== "R"
-
-	```bash
-	install.packages("sedonadb", repos = "https://community.r-multiverse.org")
-	```
 
 ## Have questions?
 
