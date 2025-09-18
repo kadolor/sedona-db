@@ -69,10 +69,12 @@ Your first step is to create a personal copy of the repository and connect it to
 
 ## Rust
 
-SedonaDB is written in Rust and is a standard `cargo` workspace. You can
-install a recent version of the Rust compiler and cargo from
-[rustup.rs](https://rustup.rs/) and run tests using `cargo test`. A local
-development version of the CLI can be run with `cargo run --bin sedona-cli`.
+SedonaDB is written in Rust and is a standard `cargo` workspace.
+
+You can install a recent version of the Rust compiler and cargo from
+[rustup.rs](https://rustup.rs/) and run tests using `cargo test`.
+
+A local development version of the CLI can be run with `cargo run --bin sedona-cli`.
 
 ### Test data setup
 
