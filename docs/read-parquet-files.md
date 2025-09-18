@@ -18,7 +18,7 @@
   under the License.
 -->
 
-# Reading Parquet Files
+# Read Parquet Files
 
 To read a Parquet file, you must use the dedicated `sd.read_parquet()` method. You cannot query a file path directly within the `sd.sql()` `FROM` clause.
 
@@ -32,7 +32,7 @@ Use pip to install SedonaDB from the Python Package Index (PyPI).
 pip install "apache-sedona[db]"
 ```
 
-## Prepare your script file
+## Implementation
 
 To read a geoparquet file with SedonaDB, you must:
 
