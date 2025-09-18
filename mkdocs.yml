@@ -26,13 +26,14 @@ nav:
      - Working with GeoPandas: geopandas-interop.md
      - Working with Overture: overture-examples.md
      - Development: development.md
+     - Read Parquet Files: read-parquet-files.md
+
    - SedonaDB Reference:
       - Python:
           - Python Functions: reference/python.md
       - SQL:
           - SQL Functions: reference/sql.md
           - Spatial Joins: reference/sql-joins.md
-          - Read Parquet Files: reference/read-parquet-files.md
    - Blog: "https://sedona.apache.org/latest/blog/"
    - Community: "https://sedona.apache.org/latest/community/contact/"
    - Apache Software Foundation: "https://sedona.apache.org/latest/asf/asf/"

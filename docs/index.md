@@ -34,7 +34,7 @@ SedonaDB has several advantages:
 
 * **Exceptional Performance:** Built in Rust to process massive geospatial datasets with exceptional speed.
 * **Unified Geospatial Toolkit:** Access a comprehensive suite of functions for both vector and raster data in a single, powerful library.
-* **Seamless Ecosystem Integration:** Built on Apache Arrow for smooth interoperability with popular data science libraries like GeoPandas, DuckDB, and Polars.
+* **Extensive Ecosystem Integration:** Built on Apache Arrow for smooth interoperability with popular data science libraries like GeoPandas, DuckDB, and Polars.
 * **Flexible APIs:** Effortlessly switch between Python and SQL interfaces to match your preferred workflow and skill set.
 * **Guaranteed CRS Propagation:** Automatically manages coordinate reference systems (CRS) to ensure spatial accuracy and prevent common errors.
 * **Broad File Format Support:** Work with a wide range of both modern and legacy geospatial file formats like geoparquet.
