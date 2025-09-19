@@ -20,9 +20,9 @@ site_description: "Documentation for Apache SedonaDB"
 site_url: https://sedona.apache.org/sedonadb/
 nav:
    - SedonaDB: index.md
+   - Python Quickstart: quickstart-python.md
    - SedonaDB Guides:
-     - Python Quickstart: quickstart-python.md
-     - Process vector data with SedonaDB: programming-guide.md
+     - Working with vector data: programming-guide.md
      - Working with GeoPandas: geopandas-interop.md
      - Working with Overture: overture-examples.md
      - Working with Parquet Files: working-with-parquet-files.md
@@ -51,7 +51,7 @@ theme:
     primary: custom
     accent: 'green'
   favicon: image/sedona_logo_symbol.png
-  logo: image/sedona_logo_symbol_white.svg
+  logo: image/sedona_logo_symbol.png
   icon:
     logo: fontawesome/solid/earth-americas
     repo: fontawesome/brands/github
