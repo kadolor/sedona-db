@@ -22,7 +22,7 @@ nav:
    - SedonaDB: index.md
    - Python Quickstart: quickstart-python.md
    - SedonaDB Guides:
-     - Working with vector data: programming-guide.md
+     - Working with Vector Data: programming-guide.md
      - Working with GeoPandas: geopandas-interop.md
      - Working with Overture: overture-examples.md
      - Working with Parquet Files: working-with-parquet-files.md
