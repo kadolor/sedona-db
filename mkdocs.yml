@@ -25,8 +25,8 @@ nav:
      - Process vector data with SedonaDB: programming-guide.md
      - Working with GeoPandas: geopandas-interop.md
      - Working with Overture: overture-examples.md
+     - Working with Parquet Files: read-parquet-files.md
      - Contributors Guide: contributors-guide.md
-     - Read Parquet Files: read-parquet-files.md
 
    - SedonaDB Reference:
       - Python:

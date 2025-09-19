@@ -18,7 +18,7 @@
   under the License.
 -->
 
-# Read Parquet Files
+# Working with Parquet Files
 
 To read a GeoPaquet or Parquet file, you must use the dedicated `sd.read_parquet()` method. You cannot query a file path directly within the `sd.sql()` `FROM` clause.
 
@@ -39,23 +39,34 @@ To read a geoparquet or parquet file with SedonaDB, you must:
 1. **Load** the Parquet file into a data frame using `sd.read_parquet()`.
 1. **Register** the data frame as a view with `to_view()`.
 1. **Query** the view using `sd.sql()`.
+1. **Write** to a Parquet file with `sd.to_parquet()`.
 
-```python linenums="1" title="Read a parquet file with SedonaDB"
+```python linenums="1" title="Read and write parquet files with SedonaDB"
 
 import sedona.db
 sd = sedona.db.connect()
 
-# Load the Parquet file, which creates a Pandas data frame.
+# 1. Load the Parquet file
 df = sd.read_parquet(
     'https://raw.githubusercontent.com/geoarrow/geoarrow-data/v0.2.0/'
     'natural-earth/files/natural-earth_cities_geo.parquet'
 )
 
-# Register the data frame as a view.
+# 2. Register the data frame as a view
 df.to_view("zone")
 
-# Now, query the view using SQL
-sd.sql("SELECT * FROM zone LIMIT 10").show()
+# 3. Query the view and store the result in a new DataFrame
+query_result_df = sd.sql("SELECT * FROM zone LIMIT 10")
+query_result_df.show()
+
+# 4. Write the result to a new Parquet file
+output_path = "query_results.parquet"
+query_result_df.to_parquet(output_path)
+
+# (Optional) Verify the written file
+print(f"\nVerifying the written file at '{output_path}'...")
+verified_df = sd.read_parquet(output_path)
+verified_df.show(5)
 ```
 
 ### Common Errors
