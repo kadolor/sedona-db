@@ -59,7 +59,7 @@ Here's how to install SedonaDB with various build tools:
 	install.packages("sedonadb", repos = "https://community.r-multiverse.org")
 	```
 
-## Run a query in SQL, Python, Rust, or R
+## Run a query
 
 SedonaDB offers a flexible query interface.
 
