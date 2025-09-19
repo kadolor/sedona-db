@@ -25,11 +25,11 @@ title: Introducing SedonaDB
 
 SedonaDB is a single-node analytical database engine with geospatial as the first-class citizen.
 
-Highly performant and dependency-free, SedonaDB is ideal for working with smaller datasets located on local machines or cloud instances.
+Fast and dependency-free, SedonaDB is ideal for working with smaller datasets located on local machines or cloud instances.
 
 The initial `0.1` release supports a core set of vector operations, with comprehensive vector and raster computation capabilities planned for the near future.
 
-For massive, distributed workloads, you can still leverage the power of SedonaSpark, SedonaFlink, or SedonaSnow.
+For distributed workloads, you can still leverage the power of SedonaSpark, SedonaFlink, or SedonaSnow.
 
 ## Key features
 

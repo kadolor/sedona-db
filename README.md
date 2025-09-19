@@ -27,7 +27,7 @@ SedonaDB only runs on a single machine, so it’s perfect for processing smaller
 
 ## Install
 
-You can install Python SedonaDB with PyPi:
+You can install Python SedonaDB with PyPI:
 
 ```sh
 pip install "apache-sedona[db]"
