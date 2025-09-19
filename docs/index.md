@@ -1,6 +1,5 @@
 ---
 hide:
-  - navigation
 
 title: Introducing SedonaDB
 ---
