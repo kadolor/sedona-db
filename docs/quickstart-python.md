@@ -19,7 +19,7 @@
 
 # Python Quickstart
 
-SedonaDB for Python can be installed from [PyPI](https://pypi.org):
+If the import and connection are successful, your installation is complete.
 
 ```shell
 pip install "apache-sedona[db]"
@@ -170,11 +170,18 @@ Let's create a DataFrame with one string column and one geometry column to show 
 
 ```python
 df = sd.sql("""
-SELECT * FROM (VALUES
-    ('one', ST_GeomFromWkt('POINT(1 2)')),
-    ('two', ST_GeomFromWkt('POLYGON((-74.0 40.7, -74.0 40.8, -73.9 40.8, -73.9 40.7, -74.0 40.7))')),
-    ('three', ST_GeomFromWkt('LINESTRING(-74.0060 40.7128, -73.9352 40.7306, -73.8561 40.8484)')))
-AS t(val, point)""")
+    SELECT * FROM (VALUES
+        ('one', ST_GeomFromWkt('POINT(1 2)')),
+        ('two', ST_GeomFromWkt('POLYGON((
+            -74.0 40.7, -74.0 40.8, -73.9 40.8,
+            -73.9 40.7, -74.0 40.7
+        ))')),
+        ('three', ST_GeomFromWkt('LINESTRING(
+            -74.0060 40.7128, -73.9352 40.7306,
+            -73.8561 40.8484
+        )'))
+    ) AS t(val, point)
+""")
 ```
 
 
@@ -232,7 +239,10 @@ sd.sql("DESCRIBE fun_table").show()
 
 
 ```python
-sd.sql("SELECT *, ST_Centroid(ST_GeomFromWKB(point)) as centroid from fun_table").show()
+sd.sql("""
+    SELECT *, ST_Centroid(ST_GeomFromWKB(point)) as centroid
+    FROM fun_table
+""").show()
 ```
 
     ┌───────┬─────────────────────────────────────────────┬────────────────────────────────────────────┐
