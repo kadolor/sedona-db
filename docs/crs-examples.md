@@ -1,25 +1,16 @@
-<!---
-  Licensed to the Apache Software Foundation (ASF) under one
-  or more contributor license agreements.  See the NOTICE file
-  distributed with this work for additional information
-  regarding copyright ownership.  The ASF licenses this file
-  to you under the Apache License, Version 2.0 (the
-  "License"); you may not use this file except in compliance
-  with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing,
-  software distributed under the License is distributed on an
-  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-  KIND, either express or implied.  See the License for the
-  specific language governing permissions and limitations
-  under the License.
--->
-
 # Coordinate Reference System (CRS) Examples
 
 This example demonstrates how one table with an EPSG 4326 CRS cannot be joined with another table that uses EPSG 3857.
+
+A Coordinate Reference System (CRS) defines how the two-dimensional coordinates of a map relate to real locations on Earth. Operations like spatial joins, distance calculations, or overlays require all datasets to be in the same CRS to produce accurate results.
+
+This notebook demonstrates a key feature of SedonaDB: it protects users from generating incorrect results by raising an error if you attempt to join tables with mismatched coordinate reference systems.
+
+We will walk through two examples:
+
+- Joining countries (using EPSG:4326, a geographic CRS) and cities (using EPSG:3857, a projected CRS).
+
+- Finding all the building footprints within the state of Vermont by joining two large datasets with different coordinate reference systems.
 
 
 ```python
@@ -54,6 +45,16 @@ countries.schema
 
 
 
+## Example 1: Create a cities table with a Projected CRS
+
+We will now create a DataFrame containing several major US cities. The coordinates are provided in Web Mercator (EPSG:3857), which uses meters as its unit.
+
+We use the `ST_SetSRID` function to assign the correct CRS identifier to our geometry data. It's important to distinguish between these two key functions:
+
+`ST_SetSRID(geometry, srid)`: This function assigns an SRID to a geometry. It does not change the underlying coordinate values. You should only use this when your data has a CRS that SedonaDB was unable to infer.
+
+`ST_Transform(geometry, target_srid)`: This function transforms the geometry from its current CRS to a new one. It re-projects the coordinate values themselves.
+
 
 ```python
 cities = sd.sql("""
@@ -84,7 +85,7 @@ cities.to_view("cities", overwrite=True)
 countries.to_view("countries", overwrite=True)
 ```
 
-## Join with mismatched CRSs
+### Join with mismatched CRSs
 
 The cities and countries tables have different CRSs.
 
@@ -133,7 +134,7 @@ where ST_Intersects(cities.geometry, countries.geometry)
     Use ST_Transform() or ST_SetSRID() to ensure arguments are compatible.
 
 
-## Convert CRS and then join
+### Convert CRS and then join
 
 Let's convert the cities table to use EPSG:4326 and then perform the join with the two tables once they have matching CRSs.
 
@@ -193,9 +194,9 @@ This example shows how to join a `vermont` table with an EPSG 32618 CRS with a `
 
 The example highlights the following features:
 
-1. SedonaDB reads the CRS stored in the files
-2. SedonaDB protects you from accidentally joining files with mismatched CRSs
-3. It's easy to convert a GeoPandas DataFrame => a SedonaDB DataFrame and maintain the CRS
+1. SedonaDB reads the CRS stored in the files/
+2. SedonaDB protects you from accidentally joining files with mismatched CRSs.
+3. It's easy to convert a GeoPandas DataFrame to a SedonaDB DataFrame and maintain the CRS.
 
 
 ```python
@@ -280,10 +281,13 @@ vermont.to_view("vermont", overwrite=True)
 
 
 ```python
+# Again, SedonaDB prevents accidentally joining files with mismatched CRSs.
 sd.sql("""
-select count(*) from buildings
-join vermont
-where ST_Intersects(buildings.geometry, vermont.geometry)
+SELECT count(*) from buildings
+JOIN vermont
+WHERE ST_Intersects(
+       buildings.geometry,
+       vermont.geometry)
 """).show()
 ```
 
@@ -320,9 +324,13 @@ where ST_Intersects(buildings.geometry, vermont.geometry)
 
 ```python
 sd.sql("""
-select count(*) from buildings
-join vermont
-where ST_Intersects(buildings.geometry, ST_Transform(vermont.geometry, 'EPSG:4326'))
+SELECT count(*)
+FROM buildings
+JOIN vermont
+WHERE ST_Intersects(
+    buildings.geometry,
+    ST_Transform(vermont.geometry, 'EPSG:4326')
+)
 """).show()
 ```
 
