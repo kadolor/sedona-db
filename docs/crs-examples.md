@@ -1,4 +1,4 @@
-# Coordinate Reference System (CRS) Examples
+# Joining Geospatial Data with Different CRSs.
 
 This example demonstrates how one table with an EPSG 4326 CRS cannot be joined with another table that uses EPSG 3857.
 
@@ -39,9 +39,9 @@ countries.schema
 
 
     SedonaSchema with 3 fields:
-      name: Utf8View
-      continent: Utf8View
-      geometry: wkb_view <epsg:4326>
+      name: utf8<Utf8View>
+      continent: utf8<Utf8View>
+      geometry: geometry<WkbView(epsg:4326)>
 
 
 
@@ -74,8 +74,8 @@ cities.schema
 
 
     SedonaSchema with 2 fields:
-      city: Utf8
-      geometry: wkb <epsg:3857>
+      city: utf8<Utf8>
+      geometry: geometry<Wkb(epsg:3857)>
 
 
 
@@ -117,15 +117,14 @@ where ST_Intersects(cities.geometry, countries.geometry)
     ----> 6 """).show()
 
 
-    File /opt/miniconda3/lib/python3.12/site-packages/sedonadb/dataframe.py:297, in DataFrame.show(self, limit, width, ascii)
-        272 """Print the first limit rows to the console
-        273
-        274 Args:
-       (...)
-        294
-        295 """
-        296 width = _out_width(width)
-    --> 297 print(self._impl.show(self._ctx, limit, width, ascii), end="")
+    File ~/new-sedonadb/sedona-db/python/sedonadb/python/sedonadb/dataframe.py:380, in DataFrame.show(self, limit, width, ascii)
+        356 """Print the first limit rows to the console
+        357
+        358 Args:
+       (...)    377
+        378 """
+        379 width = self._out_width(width)
+    --> 380 print(self._impl.show(self._ctx, limit, width, ascii), end="")
 
 
     SedonaError: type_coercion
@@ -156,8 +155,8 @@ cities.schema
 
 
     SedonaSchema with 2 fields:
-      city: Utf8
-      geometry: wkb <ogc:crs84>
+      city: utf8<Utf8>
+      geometry: geometry<Wkb(ogc:crs84)>
 
 
 
@@ -178,7 +177,7 @@ where ST_Intersects(cities.geometry, countries.geometry)
 
     ┌─────────────┬──────────────────────┬──────────────────────┬───────────────┬──────────────────────┐
     │     city    ┆       geometry       ┆         name         ┆   continent   ┆       geometry       │
-    │     utf8    ┆       geometry       ┆       utf8view       ┆    utf8view   ┆       geometry       │
+    │     utf8    ┆       geometry       ┆         utf8         ┆      utf8     ┆       geometry       │
     ╞═════════════╪══════════════════════╪══════════════════════╪═══════════════╪══════════════════════╡
     │ New York    ┆ POINT(-74.006000039… ┆ United States of Am… ┆ North America ┆ MULTIPOLYGON(((-122… │
     ├╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┤
@@ -220,7 +219,7 @@ vermont.schema
 
 
     SedonaSchema with 1 field:
-      geometry: wkb <epsg:32618>
+      geometry: geometry<Wkb(epsg:32618)>
 
 
 
@@ -240,11 +239,11 @@ buildings.show(3)
     │             geometry            │
     │             geometry            │
     ╞═════════════════════════════════╡
-    │ POINT(-77.10109681 42.53495524) │
+    │ POINT(-97.16154292 26.08759861) │
     ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┤
-    │ POINT(-77.10048552 42.53695011) │
+    │ POINT(-97.1606625 26.08481)     │
     ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┤
-    │ POINT(-77.10096508 42.53681338) │
+    │ POINT(-97.16133375 26.08519809) │
     └─────────────────────────────────┘
 
 
@@ -257,7 +256,7 @@ buildings.schema
 
 
     SedonaSchema with 1 field:
-      geometry: wkb_view <ogc:crs84>
+      geometry: geometry<WkbView(ogc:crs84)>
 
 
 
@@ -296,23 +295,25 @@ WHERE ST_Intersects(
 
     SedonaError                               Traceback (most recent call last)
 
-    Cell In[12], line 5
-          1 sd.sql("""
-          2 select count(*) from buildings
-          3 join vermont
-          4 where ST_Intersects(buildings.geometry, vermont.geometry)
-    ----> 5 """).show()
+    Cell In[20], line 8
+          1 # Again, SedonaDB prevents accidentally joining files with mismatched CRSs.
+          2 sd.sql("""
+          3 SELECT count(*) from buildings
+          4 JOIN vermont
+          5 WHERE ST_Intersects(
+          6        buildings.geometry,
+          7        vermont.geometry)
+    ----> 8 """).show()
 
 
-    File /opt/miniconda3/lib/python3.12/site-packages/sedonadb/dataframe.py:297, in DataFrame.show(self, limit, width, ascii)
-        272 """Print the first limit rows to the console
-        273
-        274 Args:
-       (...)
-        294
-        295 """
-        296 width = _out_width(width)
-    --> 297 print(self._impl.show(self._ctx, limit, width, ascii), end="")
+    File ~/new-sedonadb/sedona-db/python/sedonadb/python/sedonadb/dataframe.py:380, in DataFrame.show(self, limit, width, ascii)
+        356 """Print the first limit rows to the console
+        357
+        358 Args:
+       (...)    377
+        378 """
+        379 width = self._out_width(width)
+    --> 380 print(self._impl.show(self._ctx, limit, width, ascii), end="")
 
 
     SedonaError: type_coercion
