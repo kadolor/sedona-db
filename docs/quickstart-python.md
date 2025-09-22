@@ -21,6 +21,8 @@
 
 First, install SedonaDB:
 
+
+
 ```shell
 pip install "apache-sedona[db]"
 ```
@@ -211,7 +213,7 @@ type(df)
 
 
 
-    sedona.db.dataframe.DataFrame
+    sedonadb.dataframe.DataFrame
 
 
 

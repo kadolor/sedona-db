@@ -15,12 +15,15 @@
 # specific language governing permissions and limitations
 # under the License.
 
+griffe
 mike
+mkdocs
 mkdocs-git-revision-date-localized-plugin
 mkdocs-glightbox
 mkdocs-macros-plugin
 mkdocs-material
-mkdocstrings[python]
+mkdocstrings
+mkdocstrings-python
 nbconvert
 pyproj
 ruff

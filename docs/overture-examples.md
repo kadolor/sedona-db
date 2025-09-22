@@ -19,6 +19,8 @@
 
 # SedonaDB Overture Examples
 
+> Note: Before running this notebook, ensure that you have installed SedonaDB: `pip install "sedona[db]"`
+
 This notebook demonstrates how to query and analyze the [Overture Maps](https://overturemaps.org/) dataset using SedonaDB.
 
 The notebook explains how to:
