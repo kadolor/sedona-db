@@ -10,7 +10,7 @@ We will walk through two examples:
 
 - Joining countries (using EPSG:4326, a geographic CRS) and cities (using EPSG:3857, a projected CRS).
 
-- Finding all the building footprints within the state of Vermont by joining two large datasets with different coordinate reference systems.
+- Finding the number of buildings in Vermont by joining two large datasets with different coordinate reference systems.
 
 
 ```python
