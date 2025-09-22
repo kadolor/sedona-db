@@ -19,7 +19,7 @@
 
 # SQL API Reference
 
-The following SQL functions are available for SedonaDB.
+The following SQL functions are available for sedona.db.
 
 You can query data directly from files and URLs by treating them like database tables. This feature supports formats like **Parquet**, **CSV**, and **JSON**.
 

@@ -211,7 +211,7 @@ type(df)
 
 
 
-    sedonadb.dataframe.DataFrame
+    sedona.db.dataframe.DataFrame
 
 
 

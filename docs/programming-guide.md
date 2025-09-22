@@ -19,7 +19,7 @@
 
 # Process Vector Data with SedonaDB
 
-Process vector data using SedonaDB. You will learn to create DataFrames, run spatial queries, and manage file I/O. Let's begin by connecting to SedonaDB.
+Process vector data using sedona.db. You will learn to create DataFrames, run spatial queries, and manage file I/O. Let's begin by connecting to sedona.db.
 
 Let's start by establishing a SedonaDB connection.
 
@@ -62,7 +62,7 @@ type(df)
 
 
 
-    sedonadb.dataframe.DataFrame
+    sedona.db.dataframe.DataFrame
 
 
 
