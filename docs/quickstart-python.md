@@ -19,13 +19,13 @@
 
 # Python Quickstart
 
-If the import and connection are successful, your installation is complete.
+First, install SedonaDB:
 
 ```shell
 pip install "apache-sedona[db]"
 ```
 
-If you can import the module and connect to a new session, you're good to go!
+If the import and connection are successful, your installation is complete.
 
 
 ```python
@@ -59,7 +59,7 @@ cities.show()
 
     ┌──────────────┬───────────────────────────────┐
     │     name     ┆            geometry           │
-    │   utf8view   ┆            geometry           │
+    │     utf8     ┆            geometry           │
     ╞══════════════╪═══════════════════════════════╡
     │ Vatican City ┆ POINT(12.4533865 41.9032822)  │
     ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┤
@@ -97,7 +97,7 @@ countries.show()
 
     ┌─────────────────────────────┬───────────────┬────────────────────────────────────────────────────┐
     │             name            ┆   continent   ┆                      geometry                      │
-    │           utf8view          ┆    utf8view   ┆                      geometry                      │
+    │             utf8            ┆      utf8     ┆                      geometry                      │
     ╞═════════════════════════════╪═══════════════╪════════════════════════════════════════════════════╡
     │ Fiji                        ┆ Oceania       ┆ MULTIPOLYGON(((180 -16.067132663642447,180 -16.55… │
     ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┤
@@ -139,7 +139,7 @@ where ST_Intersects(cities.geometry, countries.geometry)
 
     ┌───────────────┬──────────────────────┬─────────────────────┬───────────────┬─────────────────────┐
     │      name     ┆       geometry       ┆         name        ┆   continent   ┆       geometry      │
-    │    utf8view   ┆       geometry       ┆       utf8view      ┆    utf8view   ┆       geometry      │
+    │      utf8     ┆       geometry       ┆         utf8        ┆      utf8     ┆       geometry      │
     ╞═══════════════╪══════════════════════╪═════════════════════╪═══════════════╪═════════════════════╡
     │ Suva          ┆ POINT(178.4417073 -… ┆ Fiji                ┆ Oceania       ┆ MULTIPOLYGON(((180… │
     ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┤
