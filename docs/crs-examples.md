@@ -17,7 +17,7 @@
   under the License.
 -->
 
-# Joining Geospatial Data with Different CRSs.
+# Joining Geospatial Data with Different CRSs
 
 This example demonstrates how one table with an EPSG 4326 CRS cannot be joined with another table that uses EPSG 3857.
 
