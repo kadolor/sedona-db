@@ -30,7 +30,7 @@ To query a file, place its path or URL in single quotes within the `FROM` clause
 "SELECT * FROM 'https://raw.githubusercontent.com/geoarrow/geoarrow-data/v0.2.0/natural-earth/files/natural-earth_cities_geo.parquet'").show()
 ```
 
-## ST\_Analyze\_Aggr
+## ST_Analyze_Aggr
 
 ### Description
 
