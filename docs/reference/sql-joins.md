@@ -76,8 +76,7 @@ The placement of filters relative to KNN joins changes the semantic meaning of t
 
 ### Example
 
-Find the 3 nearest restaurants for each luxury hotel, and then filter the results
-to only show pairs where the restaurant is also high-rated.
+Find the 3 nearest restaurants for each luxury hotel, and then filter the results to only show pairs where the restaurant is also high-rated.
 
 ```sql
 SELECT
