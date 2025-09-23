@@ -52,7 +52,7 @@ SELECT ST_Analyze_Aggr(ST_GeomFromText('MULTIPOINT(1.1 101.1,2.1 102.1,3.1 103.1
 
 -----
 
-## ST\_Area
+## ST_Area
 
 ### Description
 
@@ -74,11 +74,11 @@ SELECT ST_Area(ST_GeomFromWKT('POLYGON ((0 0, 10 0, 10 10, 0 10, 0 0))'));
 
 -----
 
-## ST\_AsBinary
+## ST_AsBinary
 
 ### Description
 
-Return the Well-Known Binary representation of a geometry or geography. This function also has the alias **ST\_AsWKB**.
+Return the Well-Known Binary representation of a geometry or geography. This function also has the alias **ST_AsWKB**.
 
 ### Format
 
@@ -96,7 +96,7 @@ SELECT ST_AsBinary(ST_Point(1.0, 2.0));
 
 -----
 
-## ST\_AsText
+## ST_AsText
 
 ### Description
 
@@ -118,7 +118,7 @@ SELECT ST_AsText(ST_Point(1.0, 2.0))
 
 -----
 
-## ST\_Buffer
+## ST_Buffer
 
 ### Description
 
@@ -141,7 +141,7 @@ SELECT ST_Buffer(ST_GeomFromText('POLYGON ((10 10, 11 10, 10 11, 10 10))'), 1.0)
 
 -----
 
-## ST\_Centroid
+## ST_Centroid
 
 ### Description
 
@@ -163,7 +163,7 @@ SELECT ST_AsText(ST_Centroid(ST_GeomFromWKT('POLYGON ((0 0, 10 0, 10 10, 0 10, 0
 
 -----
 
-## ST\_Collect
+## ST_Collect
 
 ### Description
 
@@ -185,7 +185,7 @@ SELECT ST_Collect(ST_GeomFromWKT('MULTIPOINT (0 1, 10 11)'))
 
 -----
 
-## ST\_Contains
+## ST_Contains
 
 ### Description
 
@@ -208,7 +208,7 @@ SELECT ST_Contains(ST_Point(0.25 0.25), ST_GeomFromText('POLYGON ((0 0, 1 0, 0 1
 
 -----
 
-## ST\_CoveredBy
+## ST_CoveredBy
 
 ### Description
 
@@ -231,7 +231,7 @@ SELECT ST_CoveredBy(ST_Point(0.25 0.25), ST_GeomFromText('POLYGON ((0 0, 1 0, 0 
 
 -----
 
-## ST\_Covers
+## ST_Covers
 
 ### Description
 
@@ -254,7 +254,7 @@ SELECT ST_Covers(ST_Point(0.25 0.25), ST_GeomFromText('POLYGON ((0 0, 1 0, 0 1, 
 
 -----
 
-## ST\_Difference
+## ST_Difference
 
 ### Description
 
@@ -277,7 +277,7 @@ SELECT ST_Difference(ST_GeomFromText('POLYGON ((1 1, 11 1, 1 11, 0 0))'), ST_Geo
 
 -----
 
-## ST\_Dimension
+## ST_Dimension
 
 ### Description
 
@@ -299,7 +299,7 @@ SELECT ST_Dimension(ST_GeomFromWKT('POLYGON ((0 0, 1 0, 0 1, 0 0))'));
 
 -----
 
-## ST\_Disjoint
+## ST_Disjoint
 
 ### Description
 
@@ -322,7 +322,7 @@ SELECT ST_Disjoint(ST_Point(0.25 0.25), ST_GeomFromText('POLYGON ((0 0, 1 0, 0 1
 
 -----
 
-## ST\_Distance
+## ST_Distance
 
 ### Description
 
@@ -345,7 +345,7 @@ SELECT ST_Distance(ST_GeomFromText('POLYGON ((10 10, 11 10, 10 11, 10 10))'), ST
 
 -----
 
-## ST\_DistanceSphere
+## ST_DistanceSphere
 
 ### Description
 
@@ -368,7 +368,7 @@ SELECT ST_DistanceSphere(ST_GeomFromText('POLYGON ((10 10, 11 10, 10 11, 10 10))
 
 -----
 
-## ST\_DistanceSpheroid
+## ST_DistanceSpheroid
 
 ### Description
 
@@ -391,7 +391,7 @@ SELECT ST_DistanceSpheroid(ST_GeomFromText('POLYGON ((10 10, 11 10, 10 11, 10 10
 
 -----
 
-## ST\_DWithin
+## ST_DWithin
 
 ### Description
 
@@ -415,7 +415,7 @@ SELECT ST_DWithin(ST_Point(0.25, 0.25), ST_GeomFromText('POLYGON ((0 0, 1 0, 0 1
 
 -----
 
-## ST\_Envelope
+## ST_Envelope
 
 ### Description
 
@@ -437,7 +437,7 @@ SELECT ST_Envelope(ST_Point(1.0, 2.0))
 
 -----
 
-## ST\_Envelope\_Aggr
+## ST_Envelope_Aggr
 
 ### Description
 
@@ -465,7 +465,7 @@ SELECT ST_AsText(ST_Envelope_Aggr(geom)) FROM shapes;
 
 -----
 
-## ST\_Equals
+## ST_Equals
 
 ### Description
 
@@ -488,7 +488,7 @@ SELECT ST_Equals(ST_Point(0.25 0.25), ST_GeomFromText('POLYGON ((0 0, 1 0, 0 1, 
 
 -----
 
-## ST\_FlipCoordinates
+## ST_FlipCoordinates
 
 ### Description
 
@@ -510,7 +510,7 @@ SELECT ST_FlipCoordinates(df.geometry)
 
 -----
 
-## ST\_FrechetDistance
+## ST_FrechetDistance
 
 ### Description
 
@@ -533,7 +533,7 @@ SELECT ST_FrechetDistance(ST_GeomFromText('POLYGON ((10 10, 11 10, 10 11, 10 10)
 
 -----
 
-## ST\_GeomFromWKB
+## ST_GeomFromWKB
 
 ### Description
 
@@ -556,11 +556,11 @@ SELECT ST_AsText(ST_GeomFromWKB(FROM_HEX('0101000000000000000000F03F000000000000
 
 -----
 
-## ST\_GeomFromWKT
+## ST_GeomFromWKT
 
 ### Description
 
-Construct a Geometry from WKT. This function also has the alias **ST\_GeomFromText**.
+Construct a Geometry from WKT. This function also has the alias **ST_GeomFromText**.
 
 ### Format
 
@@ -578,7 +578,7 @@ SELECT ST_AsText(ST_GeomFromWKT('POINT (30 10)'));
 
 -----
 
-## ST\_GeometryType
+## ST_GeometryType
 
 ### Description
 
@@ -600,7 +600,7 @@ SELECT ST_GeometryType(ST_GeomFromWKT('POLYGON ((0 0, 1 0, 0 1, 0 0))'))
 
 -----
 
-## ST\_HasM
+## ST_HasM
 
 ### Description
 
@@ -622,7 +622,7 @@ SELECT ST_HasM(ST_GeomFromWKT('POLYGON ((0 0, 1 0, 0 1, 0 0))'))
 
 -----
 
-## ST\_HasZ
+## ST_HasZ
 
 ### Description
 
@@ -644,7 +644,7 @@ SELECT ST_HasZ(ST_GeomFromWKT('POLYGON ((0 0, 1 0, 0 1, 0 0))'))
 
 -----
 
-## ST\_HausdorffDistance
+## ST_HausdorffDistance
 
 ### Description
 
@@ -667,7 +667,7 @@ SELECT ST_HausdorffDistance(ST_GeomFromText('POLYGON ((10 10, 11 10, 10 11, 10 1
 
 -----
 
-## ST\_Intersection
+## ST_Intersection
 
 ### Description
 
@@ -690,7 +690,7 @@ SELECT ST_Intersection(ST_GeomFromText('POLYGON ((1 1, 11 1, 1 11, 0 0))'), ST_G
 
 -----
 
-## ST\_Intersection\_Aggr
+## ST_Intersection_Aggr
 
 ### Description
 
@@ -718,7 +718,7 @@ SELECT ST_AsText(ST_Intersection_Aggr(geom)) FROM shapes;
 
 -----
 
-## ST\_Intersects
+## ST_Intersects
 
 ### Description
 
@@ -741,7 +741,7 @@ SELECT ST_Intersects(ST_Point(0.25 0.25), ST_GeomFromText('POLYGON ((0 0, 1 0, 0
 
 -----
 
-## ST\_IsEmpty
+## ST_IsEmpty
 
 ### Description
 
@@ -763,7 +763,7 @@ SELECT ST_IsEmpty(ST_GeomFromWKT('POLYGON EMPTY'));
 
 -----
 
-## ST\_KNN
+## ST_KNN
 
 ### Description
 
@@ -778,7 +778,7 @@ Return true if geomA finds k nearest neighbors from geomB.
   * **geomA**: Query geometry or geography.
   * **geomB**: Object geometry or geography.
   * **k**: Number of nearest neighbors to find.
-  * **use\_spheroid**: Use spheroid distance calculation.
+  * **use_spheroid**: Use spheroid distance calculation.
 
 ### SQL Example
 
@@ -788,11 +788,11 @@ SELECT * FROM table1 a JOIN table2 b ON ST_KNN(a.geom, b.geom, 5, false)
 
 -----
 
-## ST\_Length
+## ST_Length
 
 ### Description
 
-Returns the length of geom. This function only supports LineString, MultiLineString, and GeometryCollections containing linear geometries. Use ST\_Perimeter for polygons.
+Returns the length of geom. This function only supports LineString, MultiLineString, and GeometryCollections containing linear geometries. Use ST_Perimeter for polygons.
 
 ### Format
 
@@ -810,7 +810,7 @@ SELECT ST_Length(ST_GeomFromWKT('LINESTRING(0 0, 10 0)'));
 
 -----
 
-## ST\_M
+## ST_M
 
 ### Description
 
@@ -832,7 +832,7 @@ SELECT ST_M(ST_Point(1.0, 2.0))
 
 -----
 
-## ST\_M
+## ST_M
 
 ### Description
 
@@ -854,7 +854,7 @@ SELECT ST_M(ST_Point(1.0, 2.0))
 
 -----
 
-## ST\_MakeLine
+## ST_MakeLine
 
 ### Description
 
@@ -877,7 +877,7 @@ SELECT ST_MakeLine(ST_Point(0, 1), ST_Point(2, 3)) as geom
 
 -----
 
-## ST\_MaxDistance
+## ST_MaxDistance
 
 ### Description
 
@@ -900,7 +900,7 @@ SELECT ST_MaxDistance(ST_GeomFromText('POLYGON ((10 10, 11 10, 10 11, 10 10))'),
 
 -----
 
-## ST\_MMax
+## ST_MMax
 
 ### Description
 
@@ -923,7 +923,7 @@ SELECT ST_MMax(ST_GeomFromWKT('LINESTRING ZM (1 2 3 4, 5 6 7 8)'));
 
 -----
 
-## ST\_MMax
+## ST_MMax
 
 ### Description
 
@@ -945,7 +945,7 @@ SELECT ST_MMax(ST_GeomFromWKT('POLYGON ((0 0, 1 0, 0 1, 0 0))'))
 
 -----
 
-## ST\_MMin
+## ST_MMin
 
 ### Description
 
@@ -968,7 +968,7 @@ SELECT ST_MMin(ST_GeomFromWKT('LINESTRING ZM (1 2 3 4, 5 6 7 8)'));
 
 -----
 
-## ST\_MMin
+## ST_MMin
 
 ### Description
 
@@ -990,13 +990,13 @@ SELECT ST_MMin(ST_GeomFromWKT('POLYGON ((0 0, 1 0, 0 1, 0 0))'))
 
 -----
 
-## ST\_Perimeter
+## ST_Perimeter
 
 ### Description
 
-This function calculates the 2D perimeter of a given geometry. It supports Polygon, MultiPolygon, and GeometryCollection geometries (as long as the GeometryCollection contains polygonal geometries). For other types, it returns 0. To measure lines, use ST\_Length.
+This function calculates the 2D perimeter of a given geometry. It supports Polygon, MultiPolygon, and GeometryCollection geometries (as long as the GeometryCollection contains polygonal geometries). For other types, it returns 0. To measure lines, use ST_Length.
 
-To get the perimeter in meters, set **use\_spheroid** to true. This calculates the geodesic perimeter using the WGS84 spheroid. When using use\_spheroid, the **lenient** parameter defaults to true, assuming the geometry uses EPSG:4326. To throw an exception instead, set lenient to false.
+To get the perimeter in meters, set **use_spheroid** to true. This calculates the geodesic perimeter using the WGS84 spheroid. When using use_spheroid, the **lenient** parameter defaults to true, assuming the geometry uses EPSG:4326. To throw an exception instead, set lenient to false.
 
 ### Format
 
@@ -1007,8 +1007,8 @@ To get the perimeter in meters, set **use\_spheroid** to true. This calculates t
 ### Arguments
 
   * **geom**: Input geometry.
-  * **use\_spheroid**: If true, calculates the geodesic perimeter using the WGS84 spheroid. Defaults to false.
-  * **lenient**: If true, assumes the geometry uses EPSG:4326 when use\_spheroid is true. Defaults to true.
+  * **use_spheroid**: If true, calculates the geodesic perimeter using the WGS84 spheroid. Defaults to false.
+  * **lenient**: If true, assumes the geometry uses EPSG:4326 when use_spheroid is true. Defaults to true.
 
 ### SQL Example
 
@@ -1018,7 +1018,7 @@ SELECT ST_Perimeter(ST_GeomFromWKT('POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))'));
 
 -----
 
-## ST\_Point
+## ST_Point
 
 ### Description
 
@@ -1041,7 +1041,7 @@ SELECT ST_AsText(ST_Point(-74.0060, 40.7128));
 
 -----
 
-## ST\_PointM
+## ST_PointM
 
 ### Description
 
@@ -1065,7 +1065,7 @@ SELECT ST_PointM(-64.36, 45.09, 50.0)
 
 -----
 
-## ST\_PointZ
+## ST_PointZ
 
 ### Description
 
@@ -1089,7 +1089,7 @@ SELECT ST_PointZ(-64.36, 45.09, 100.0)
 
 -----
 
-## ST\_PointZM
+## ST_PointZM
 
 ### Description
 
@@ -1114,7 +1114,7 @@ SELECT ST_PointZM(-64.36, 45.09, 100.0, 50.0)
 
 -----
 
-## ST\_SetSRID
+## ST_SetSRID
 
 ### Description
 
@@ -1137,7 +1137,7 @@ SELECT ST_SetSRID(ST_GeomFromWKT('POINT (-64.363049 45.091501)'), 4326);
 
 -----
 
-## ST\_SRID
+## ST_SRID
 
 ### Description
 
@@ -1159,7 +1159,7 @@ SELECT ST_SRID(polygon)
 
 -----
 
-## ST\_SymDifference
+## ST_SymDifference
 
 ### Description
 
@@ -1182,7 +1182,7 @@ SELECT ST_SymDifference(ST_GeomFromText('POLYGON ((1 1, 11 1, 1 11, 0 0))'), ST_
 
 -----
 
-## ST\_Touches
+## ST_Touches
 
 ### Description
 
@@ -1205,7 +1205,7 @@ SELECT ST_Touches(ST_Point(0.25 0.25), ST_GeomFromText('POLYGON ((0 0, 1 0, 0 1,
 
 -----
 
-## ST\_Transform
+## ST_Transform
 
 ### Description
 
@@ -1221,8 +1221,8 @@ If the source CRS is not specified, it will be read from the geometry's metadata
 ### Arguments
 
   * **geom**: Input geometry or geography.
-  * **source\_crs**: The source CRS code (e.g., 'EPSG:4326').
-  * **target\_crs**: The target CRS code to transform into.
+  * **source_crs**: The source CRS code (e.g., 'EPSG:4326').
+  * **target_crs**: The target CRS code to transform into.
   * **lenient**: A boolean that, if true, assumes the source is EPSG:4326 if not specified. Defaults to true.
 
 ### SQL Example
@@ -1234,7 +1234,7 @@ SELECT ST_Transform(ST_SetSRID(ST_GeomFromWkt('POLYGON((170 50,170 72,-130 72,-1
 
 -----
 
-## ST\_Union
+## ST_Union
 
 ### Description
 
@@ -1257,7 +1257,7 @@ SELECT ST_Union(ST_GeomFromText('POLYGON ((1 1, 11 1, 1 11, 0 0))'), ST_GeomFrom
 
 -----
 
-## ST\_Union\_Aggr
+## ST_Union_Aggr
 
 ### Description
 
@@ -1285,7 +1285,7 @@ SELECT ST_AsText(ST_Union_Aggr(geom)) FROM shapes;
 
 -----
 
-## ST\_Within
+## ST_Within
 
 ### Description
 
@@ -1308,7 +1308,7 @@ SELECT ST_Within(ST_Point(0.25 0.25), ST_GeomFromText('POLYGON ((0 0, 1 0, 0 1, 
 
 -----
 
-## ST\_X
+## ST_X
 
 ### Description
 
@@ -1330,7 +1330,7 @@ SELECT ST_X(ST_Point(1.0, 2.0))
 
 -----
 
-## ST\_XMax
+## ST_XMax
 
 ### Description
 
@@ -1353,7 +1353,7 @@ SELECT ST_XMax(ST_GeomFromWKT('LINESTRING(1 5, 10 15)'));
 
 -----
 
-## ST\_XMin
+## ST_XMin
 
 ### Description
 
@@ -1376,7 +1376,7 @@ SELECT ST_XMin(ST_GeomFromWKT('LINESTRING(1 5, 10 15)'));
 
 -----
 
-## ST\_Y
+## ST_Y
 
 ### Description
 
@@ -1398,7 +1398,7 @@ SELECT ST_Y(ST_Point(1.0, 2.0))
 
 -----
 
-## ST\_YMax
+## ST_YMax
 
 ### Description
 
@@ -1421,7 +1421,7 @@ SELECT ST_YMax(ST_GeomFromWKT('LINESTRING(1 5, 10 15)'));
 
 -----
 
-## ST\_YMin
+## ST_YMin
 
 ### Description
 
@@ -1444,7 +1444,7 @@ SELECT ST_YMin(ST_GeomFromWKT('LINESTRING(1 5, 10 15)'));
 
 -----
 
-## ST\_Z
+## ST_Z
 
 ### Description
 
@@ -1466,7 +1466,7 @@ SELECT ST_Z(ST_Point(1.0, 2.0))
 
 -----
 
-## ST\_ZMax
+## ST_ZMax
 
 ### Description
 
@@ -1489,7 +1489,7 @@ SELECT ST_ZMax(ST_GeomFromWKT('LINESTRING ZM (1 2 3 4, 5 6 7 8)'));
 
 -----
 
-## ST\_ZMin
+## ST_ZMin
 
 ### Description
 
