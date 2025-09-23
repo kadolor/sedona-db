@@ -89,11 +89,11 @@ SedonaDB offers a flexible query interface.
 
 === "R"
 
-    ```r
-    library(sedonadb)
+  ```r
+  library(sedonadb)
 
-    sd_sql("SELECT ST_Point(0, 1) as geom")
-    ```
+  sd_sql("SELECT ST_Point(0, 1) as geom")
+  ```
 
 ## Have questions?
 
