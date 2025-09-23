@@ -138,7 +138,7 @@ where ST_Intersects(cities.geometry, countries.geometry)
     ----> 6 """).show()
 
 
-    File ~/new-sedonadb/sedona-db/python/sedonadb/python/sedonadb/dataframe.py:380, in DataFrame.show(self, limit, width, ascii)
+    File ~/sedona-db/python/sedonadb/python/sedonadb/dataframe.py:380, in DataFrame.show(self, limit, width, ascii)
         356 """Print the first limit rows to the console
         357
         358 Args:
