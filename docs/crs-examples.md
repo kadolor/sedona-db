@@ -17,7 +17,7 @@
   under the License.
 -->
 
-# Joining Geospatial Data with Different CRSs.
+# Joining Spatial Data with Different Coordinate Systems
 
 > Note: Before running this notebook, ensure that you have installed SedonaDB: `pip install "sedona[db]"`
 
