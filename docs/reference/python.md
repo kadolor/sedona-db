@@ -18,10 +18,10 @@
 -->
 # Python API Reference
 
-::: sedona.db.context
+::: sedonadb.context
 
-::: sedona.db.dataframe
+::: sedonadb.dataframe
 
-::: sedona.db.testing
+::: sedonadb.testing
 
-::: sedona.db.dbapi
+::: sedonadb.dbapi
