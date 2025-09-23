@@ -155,5 +155,5 @@ plugins:
                  show_symbol_type_toc: true
                  signature_crossrefs: true
                  preload_modules:
-                 - sedonadb
+                   - sedonadb
                  search_paths: [python]
