@@ -1,22 +1,3 @@
-<!---
-  Licensed to the Apache Software Foundation (ASF) under one
-  or more contributor license agreements.  See the NOTICE file
-  distributed with this work for additional information
-  regarding copyright ownership.  The ASF licenses this file
-  to you under the Apache License, Version 2.0 (the
-  "License"); you may not use this file except in compliance
-  with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing,
-  software distributed under the License is distributed on an
-  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-  KIND, either express or implied.  See the License for the
-  specific language governing permissions and limitations
-  under the License.
--->
-
 # Joining Spatial Data with Different Coordinate Systems
 
 > Note: Before running this notebook, ensure that you have installed SedonaDB: `pip install "sedona[db]"`
@@ -106,7 +87,7 @@ cities.to_view("cities", overwrite=True)
 countries.to_view("countries", overwrite=True)
 ```
 
-### Join with mismatched CRSs
+### Join with mismatched Coordinate Reference Systems
 
 The cities and countries tables have different CRSs.
 
@@ -138,7 +119,7 @@ where ST_Intersects(cities.geometry, countries.geometry)
     ----> 6 """).show()
 
 
-    File ~/sedona-db/python/sedonadb/python/sedonadb/dataframe.py:380, in DataFrame.show(self, limit, width, ascii)
+    File ~/new-sedonadb/sedona-db/python/sedonadb/python/sedonadb/dataframe.py:380, in DataFrame.show(self, limit, width, ascii)
         356 """Print the first limit rows to the console
         357
         358 Args:
@@ -214,7 +195,7 @@ This example shows how to join a `vermont` table with an EPSG 32618 CRS with a `
 
 The example highlights the following features:
 
-1. SedonaDB reads the CRS stored in the files/
+1. SedonaDB reads the CRS stored in the files.
 2. SedonaDB protects you from accidentally joining files with mismatched CRSs.
 3. It's easy to convert a GeoPandas DataFrame to a SedonaDB DataFrame and maintain the CRS.
 
