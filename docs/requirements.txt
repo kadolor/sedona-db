@@ -22,8 +22,7 @@ mkdocs-git-revision-date-localized-plugin
 mkdocs-glightbox
 mkdocs-macros-plugin
 mkdocs-material
-mkdocstrings
-mkdocstrings-python
+mkdocstrings[python]
 nbconvert
 pyproj
 ruff
